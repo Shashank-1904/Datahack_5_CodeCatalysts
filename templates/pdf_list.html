@@ -1,8 +1,0 @@
-<form method="POST">
-  {% for pdf_document in pdf_documents %}
-  <li>
-    {{ pdf_document.title }}
-    <a href="{{ pdf_document.id }}" target="_blank">View PDF</a>
-  </li>
-  {% endfor %}
-</form>

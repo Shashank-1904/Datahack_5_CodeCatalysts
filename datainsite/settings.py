@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userportfolio',
+    
 ]
 
 MIDDLEWARE = [
@@ -70,12 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'datainsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'skillportfolio',
         'USER': 'root',
@@ -83,7 +82,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
     }
-}
+}    
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -119,13 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
 # settings.py
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -133,3 +134,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # Use the appropriate port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'junitcp21@gmail.com'
+EMAIL_HOST_PASSWORD = 'fsmpkhppduavxnpt'
+# DEFAULT_FROM_EMAIL = 'junitcp21@gmail.com'
+
